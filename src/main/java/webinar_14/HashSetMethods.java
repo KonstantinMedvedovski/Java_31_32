@@ -1,9 +1,6 @@
 package webinar_14;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.*;
 
 public class HashSetMethods {
     public static void main(String[] args) {
@@ -34,25 +31,38 @@ public class HashSetMethods {
         linkedHashSet.add("str1");
         System.out.println(linkedHashSet);
 
+        HashSet<Integer> hash2 = new HashSet<>(40,0.9F);
+
+
 
         HashSet<Integer> hashSet2 = new HashSet<Integer>();
 
         System.out.println("======================");
-        Person person1 = new Person(23, 100l, "Andrey");
-        Person person2 = new Person(23, 100l, "Andrey");
-        Person person3 = new Person(23, 100l, "Andrey");
-        Person person4 = new Person(23, 100l, "Andrey");
+        Person person1 = new Person(23, 1001l, "Andrey");
+        Person person2 = new Person(25, 10l, "Andre");
+        Person person3 = new Person(28, 100l, "Andr");
+        Person person4 = new Person(29, 1002l, "Ndrey");
 
         HashSet<Person> people = new HashSet<>();
-        people.add(person1);
-        people.add(person2);
+        people.add(person1);//12345
+        people.add(person2);//4375678
         people.add(person3);
         people.add(person4);
         System.out.println(people);
+        System.out.println("=================");
 
 //        HashSet<String> words = new HashSet<>();
 //        words.add("To be or not to be");
 //        System.out.println(words.contains("To be or not to be"));
+        TreeSet<Person> people1 = new TreeSet<>();
+        people1.add(person1);//12345
+        people1.add(person2);//4375678
+        people1.add(person3);
+        people1.add(person4);
+        System.out.println(people1.contains(person2));
+        System.out.println(people1.hashCode());
+        Collections.addAll(people1);
+        System.out.println(people1.hashCode());
 
 
     }
